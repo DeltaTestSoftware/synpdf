@@ -5893,7 +5893,10 @@ begin
     end;
   except
     on E: Exception do // error on file creation (opened in reader?)
+    begin
       result := false;
+      raise;
+    end;
   end;
 end;
 
